@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadFileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('ajax-file-upload-progress-bar', [UploadFileController::class, 'index']);
+Route::post('store', [UploadFileController::class, 'store']);
